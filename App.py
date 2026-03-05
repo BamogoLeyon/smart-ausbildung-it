@@ -1,11 +1,22 @@
-def willkommen():
-    print("Willkommen bei SmartAusbildung!")
-    print("Diese Anwendung hilft bei der Orientierung für IT-Ausbildungen in Deutschland.")
-    print("")
-    print("Beliebte IT-Berufe:")
-    print("1. Fachinformatiker/in - Anwendungsentwicklung")
-    print("2. Fachinformatiker/in - Systemintegration")
-    print("3. IT-Systemelektroniker/in")
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return """
+    <h1>SmartAusbildung</h1>
+    <h2>IT Ausbildung in Deutschland</h2>
+    <p>Diese Plattform hilft internationalen Bewerbern, 
+    eine passende IT-Ausbildung in Deutschland zu finden.</p>
+
+    <h3>Beliebte IT-Berufe:</h3>
+    <ul>
+        <li>Fachinformatiker/in - Anwendungsentwicklung</li>
+        <li>Fachinformatiker/in - Systemintegration</li>
+        <li>IT-Systemelektroniker/in</li>
+    </ul>
+    """
 
 if __name__ == "__main__":
-    willkommen()
+    app.run()
