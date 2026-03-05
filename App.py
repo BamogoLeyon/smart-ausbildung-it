@@ -20,3 +20,17 @@ def home():
 
 if __name__ == "__main__":
     app.run()
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+@app.route("/berufe")
+def berufe():
+    return render_template("berufe.html")
+
+if __name__ == "__main__":
+    app.run()
